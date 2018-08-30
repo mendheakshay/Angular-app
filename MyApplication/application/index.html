@@ -33,7 +33,7 @@
 <div class="container" ng-controller="GroceryListItemsController">
     <div class="col-xs-12">
         <ul class="list-group">
-          <li ng-repeat="iten in groceryItems | orderBy: 'date'" class="list-group-item text-center clearfix">
+          <li ng-repeat="item in groceryItems | orderBy: 'date'" class="list-group-item text-center clearfix">
             <span style="font-weight: bold">{{item.itemName | uppercase}}</span>
           </li>
         </ul>
