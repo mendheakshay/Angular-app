@@ -3,12 +3,19 @@
         <h1>Add Item Below</h1>
     </div>
     <form name="groceryForm">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Grocery Item" ng-model="groceryItem.itemName">
+
+        <div class="alert alert-danger" role="alert" ng-show="groceryForm.$dirty && !groceryForm.$valid">
+            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+            <span class="sr-only">Error:</span>
+            Enter a valid grocery item!
         </div>
 
         <div class="form-group">
-            <button type="button" class="btn btn-success btn-lg btn-block" ng-click="save()">
+            <input type="text" ng-pattern="/^[a-zA-Z]*$/" class="form-control" placeholder="Grocery Item" ng-model="groceryItem.itemName" required>
+        </div>
+
+        <div class="form-group">
+            <button type="button" class="btn btn-success btn-lg btn-block" ng-click="groceryForm.$valid && save()">
                 <span class="glyphicon glyphicon-pushpin"></span>
                 Save
             </button>
@@ -21,4 +28,5 @@
             </a>
         </div>
     </form>
+
 </div>
